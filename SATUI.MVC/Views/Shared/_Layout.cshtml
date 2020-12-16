@@ -1,44 +1,161 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Smoth | Corporate HTML Template </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/meanmenu.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Add your site or application content here -->
+    <!-- header start -->
+    <header>
+        <div class="header-top-area black-bg hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <ul class="top-right">
+                            <li>
+                                <i class="fa fa-envelope"></i>
+                                <span>Support@mail.com</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <span>+01 1800 453 7678</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-sm-6 hidden-xs">
+                        <div class="header-icon floatright">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-youtube"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        <!-- main-menu-area-start -->
+        <div class="main-menu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-2">
+                        <div class="logo">
+                            <a href="index.html"><img src="img/logo/1.png" alt="" /></a>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-10">
+                        <div class="main-menu floatright">
+                            <nav>
+                                <ul>
+                                    <li class="active">
+                                        <a href="@Url.Action("Index", " Home")">Home<i class="fa fa-angle-down"></i></a></li>
+                                    <li><a href="about.html">Courses</a></li>
+                                    <li><a href="service.html">Enrollments</a></li>
+                                    <li>
+                                        <a href="portfolio.html">Schedulled Classes<i class="fa fa-angle-down"></i></a>
+                                    </li>
+                                    <li><a href="team.html">Students</a></li>
+                                    <li>
+                                        <a href="blog-left-sidebar.html">Student Statuses<i class="fa fa-angle-down"></i></a>
+                                    </li>
+                                    <li><a href="contact.html">contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mobile-menu-area"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main-menu-area-end -->
+    </header>
+    <!-- header end -->
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderBody()
+
+    <!-- footer start -->
+    <footer>
+        <div class="footer-area black-bg ptb-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4">
+                        <div class="footer-widget md-30">
+                            <div class="footer-img">
+                                <a href="#"><img src="img/logo/2.png" alt="" /></a>
+                            </div>
+                            <div class="footer-address">
+                                <p>We create themes and templates with bootstrap framework.</p>
+                            </div>
+                            <div class="address">
+                                <ul class="list-unstyled contact">
+                                    <li><p><strong><i class="fa fa-map-marker"></i> </strong> vaisahali, jaipur, 302012</p></li>
+                                    <li><p><strong><i class="fa fa-envelope"></i></strong> <a href="#">Support@domain.com</a></p></li>
+                                    <li> <p><strong><i class="fa fa-phone"></i></strong> +91 1800 2345 2132</p></li>
+                                    <li> <p><strong><i class="fa fa-print"></i> </strong> 1800 2345 2132</p></li>
+                                    <li> <p><strong><i class="fa fa-skype"></i> </strong> jondoe001</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="social-icons text-center">
+                    <label>Find Us:</label>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-tumblr"></i></a>
+                    <a href="#"><i class="fa fa-flickr"></i></a>
+                    <a href="#"><i class="fa fa-github"></i></a>
+                    <a href="#"><i class="fa fa-ge"></i></a>
+                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                    <a href="#"><i class="fa fa-amazon"></i></a>
+                    <a href="#"><i class="fa fa-codepen"></i></a>
+                </div>
+                <div class="copyright text-center">
+                    <p>&copy; All Rights Reserved | Xavier's School for Gifted Children </p>
+                    <a href="#">ThemePure</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+    <!-- all js here -->
+    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.meanmenu.js"></script>
+    <script src="js/jquery.mixitup.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    @RenderSection("", false)
 </body>
 </html>
