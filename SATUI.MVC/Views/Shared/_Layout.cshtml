@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="~/Content/css/meanmenu.css">
     <link rel="stylesheet" href="~/Content/style.css">
     <link rel="stylesheet" href="~/Content/css/responsive.css">
+    <link href="~/Content/css/CustomStyleSheet.css" rel="stylesheet" />
     <script src="~/Content/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
@@ -68,10 +69,12 @@
                         <div class="main-menu floatright">
                             <nav>
                                 <ul>
-                                    <li class="active">
-                                        <a href="index.html">Home</a>
+                                    <li>
+                                        @Html.ActionLink("Home", "Index", "Home")
                                     </li>
-                                    <li><a href="about.html">Courses</a></li>
+                                    <li>
+                                        @Html.ActionLink("Courses", "Index", "Cours")
+                                    </li>
                                     <li><a href="service.html">Enrollment</a></li>
                                     <li>
                                         <a href="portfolio.html">Schedulled Classes</a>
@@ -83,7 +86,7 @@
                                     <li><a href="contact.html">contact</a></li>
                                     @Html.Partial("_LoginPartial")
                                 </ul>
-                                
+
                             </nav>
                         </div>
                         <div class="mobile-menu-area"></div>
@@ -145,7 +148,7 @@
                         &copy;All Rights Reserved | Xavier's School for the Gifted
                     </p>
                     <!--<p>Smoth template - All rights reserved - 2018 © Made by</p>
-    <a href="#">ThemePure</a>-->
+                    <a href="#">ThemePure</a>-->
                 </div>
             </div>
         </div>
@@ -163,7 +166,13 @@
     <script src="~/Content/js/plugins.js"></script>
     <script src="~/Content/js/main.js"></script>
 
-    @RenderSection("scripts", required:false)
-
+    @RenderSection("scripts", required: false)
+    <script>
+        $('.mainmenu ul li a').each(function () {
+            if ($(this).attr('href') == window.location.pathname) {
+                $(this).addClass('active');
+            }
+        });
+    </script>
 </body>
 </html>
