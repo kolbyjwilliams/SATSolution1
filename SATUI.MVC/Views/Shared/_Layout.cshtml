@@ -57,7 +57,7 @@
         </div>
         <!-- main-menu-area-start -->
         <div class="main-menu-area">
-            <div class="container">
+            <div class="container" style="width: 1400px;">
                 <div class="row">
                     <div class="col-md-3 col-sm-2">
                         <div class="logo">
@@ -69,20 +69,21 @@
                             <nav>
                                 <ul>
                                     <li class="active">
-                                        <a href="index.html">Home<i class="fa fa-angle-down"></i></a>
+                                        <a href="index.html">Home</a>
                                     </li>
                                     <li><a href="about.html">Courses</a></li>
                                     <li><a href="service.html">Enrollment</a></li>
                                     <li>
-                                        <a href="portfolio.html">Schedulled Classes<i class="fa fa-angle-down"></i></a>
+                                        <a href="portfolio.html">Schedulled Classes</a>
                                     </li>
                                     <li><a href="team.html">Students</a></li>
                                     <li>
-                                        <a href="blog-left-sidebar.html">Student Statuses<i class="fa fa-angle-down"></i></a>
+                                        <a href="blog-left-sidebar.html">Student Statuses</a>
                                     </li>
                                     <li><a href="contact.html">contact</a></li>
+                                    @Html.Partial("_LoginPartial")
                                 </ul>
-                                @Html.Partial("_LoginPartial")
+                                
                             </nav>
                         </div>
                         <div class="mobile-menu-area"></div>
@@ -162,7 +163,7 @@
     <script src="~/Content/js/plugins.js"></script>
     <script src="~/Content/js/main.js"></script>
 
-    @RenderSection("", false)
+    @RenderSection("scripts", required:false)
 
 </body>
 </html>
