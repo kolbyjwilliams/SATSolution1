@@ -1,7 +1,7 @@
 ﻿#CoursCreate{
     width:85%;
     margin:auto;
-    padding:1em 0em 0em 11em;
+    /*padding:1em 0em 0em 11em;*/
     border: 4px solid black;
     box-shadow:darkgrey 10px 10px;
 }
@@ -17,10 +17,10 @@
 }
 #test {
     /*float: left;*/
-    margin-right: 81em;
-    margin-left: 3em;
+    /*margin-right: 81em;*/
+    /*margin-left: 3em;*/
     margin-bottom: 1em;
 }
-.dropdown-menu {
-    margin-left: 93.7em;
+#createIndexRowWidth{
+    width: 95%;
 }

@@ -39,8 +39,8 @@ namespace SATUI.MVC.Controllers
         // GET: Enrollments/Create
         public ActionResult Create()
         {
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses, "ScheduledClassId", "InstuctorName");
-            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "FirstName");
+            ViewBag.ScheduledClassId = new SelectList(db.Courses, "CourseId", "CourseName");
+            ViewBag.StudentId = new SelectList(db.Students, "StudentID", "FullName");
             return View();
         }
 

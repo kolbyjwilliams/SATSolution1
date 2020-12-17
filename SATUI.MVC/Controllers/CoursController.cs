@@ -136,5 +136,9 @@ namespace SATUI.MVC.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult Tiles()
+        {
+            return View(db.Courses.ToList());
+        }
     }
 }

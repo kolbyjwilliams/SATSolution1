@@ -1,15 +1,19 @@
 ﻿@model IEnumerable<SAT.DATA.EF.Student>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Students";
 }
 
-<h2>Index</h2>
+<h2 id="viewHeader">@ViewBag.Title</h2>
 @if (User.IsInRole("Admin"))
 {
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    <div class="row" id="createIndexRowWidth">
+        <div class="col-md-4">
+            <a href="@Url.Action("Create", "Student")" class="btn btn-default" id="test">
+                Add a Student
+            </a>
+        </div>
+    </div>
 }
 <table class="table">
     <tr>

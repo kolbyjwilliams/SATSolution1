@@ -557,6 +557,7 @@
     <Content Include="Views\StudentStatus\Index.cshtml" />
     <Content Include="Views\Cours\Retired.cshtml" />
     <Content Include="Views\Cours\Active.cshtml" />
+    <Content Include="Views\Cours\Tiles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

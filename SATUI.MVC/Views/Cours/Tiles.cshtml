@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SAT.DATA.EF.Cours>
+
+@{
+    ViewBag.Title = "Tiles";
+}
+
+<h2 id="viewHeader">Tiles</h2>
+
+
+<div class="row" id="createIndexRowWidth">
+    <div class="col-md-4">
+        <a href="@Url.Action("Create", "Cours")" class="btn btn-default" id="test">
+            Create Course
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a href="@Url.Action("Index", "Cours")" class="btn btn-default" id="test">
+            View Table
+        </a>
+    </div>
+
+    <div class="dropdown col-md-4">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Dropdown
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>@Html.ActionLink("Active", "Active", "Cours")</li>
+            <li>@Html.ActionLink("Retired", "Retired", "Cours")</li>
+        </ul>
+    </div>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="statusContainer">
+        <div class="scTitle">
+            <p>@Html.DisplayFor(modelItem => item.CourseName)</p>
+        </div>
+        <div class="scCh">
+            <p>@Html.DisplayFor(modelItem => item.CreditHours)</p>
+        </div>
+        <div class="scDesc">
+            <p>@Html.DisplayFor(modelItem => item.CourseDescription)</p>
+        </div>
+        <div class="scCurric">
+            <p>@Html.DisplayFor(modelItem => item.Curriculum)</p>
+        </div>
+        <div class="scNotes">
+            <p>@Html.DisplayFor(modelItem => item.Notes)</p>
+        </div>
+        <div class="scIsA">
+            <p>@Html.DisplayFor(modelItem => item.IsActive)</p>
+        </div>
+        <div class="tileFooter">
+            @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+
+        </div>
+    </div>
+}
+
+

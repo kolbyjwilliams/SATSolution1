@@ -6,20 +6,27 @@
 
 <h2 id="viewHeader">Index</h2>
 
-<div>
-    <a href="@Url.Action("Create", "Cours")" class="btn btn-default" id="test">
-       Create Course
-    </a>
-</div>
-<div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Dropdown
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li>@Html.ActionLink("Active","Active","Cours")</li>
-        <li>@Html.ActionLink("Retired","Retired","Cours")</li>
-    </ul>
+<div class="row" id="createIndexRowWidth">
+    <div class="col-md-4">
+        <a href="@Url.Action("Create", "Cours")" class="btn btn-default" id="test">
+            Create Course
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="@Url.Action("Tiles", "Cours")" class="btn btn-default" id="test">
+            View Tiles
+        </a>
+    </div>
+    <div class="dropdown col-md-4">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Dropdown
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>@Html.ActionLink("Active", "Active", "Cours")</li>
+            <li>@Html.ActionLink("Retired", "Retired", "Cours")</li>
+        </ul>
+    </div>
 </div>
 <table class="table">
     <tr>

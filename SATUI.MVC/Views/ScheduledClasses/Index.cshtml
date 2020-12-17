@@ -1,14 +1,19 @@
 ﻿@model IEnumerable<SAT.DATA.EF.ScheduledClass>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Scheduled Classes";
 }
 
-<h2>Index</h2>
+<h2 id="viewHeader">@ViewBag.Title</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div class="row" id="createIndexRowWidth">
+    <div class="col-md-4">
+        <a href="@Url.Action("Create", "ScheduledClass")" class="btn btn-default" id="test">
+            Add a Scheduled Class
+        </a>
+    </div>
+</div>
+
 <table class="table">
     <tr>
         <th>
@@ -32,32 +37,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EndDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InstuctorName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cours.CourseName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ScheduledClassStatus.SCSName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ScheduledClassId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ScheduledClassId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ScheduledClassId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstuctorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cours.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScheduledClassStatus.SCSName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ScheduledClassId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ScheduledClassId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ScheduledClassId })
+            </td>
+        </tr>
+    }
 
 </table>
