@@ -10,6 +10,9 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
     <!-- all css here -->
+    <link href="~/Content/assets/css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/documenter_style.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/Content/css/pe-icon-7-stroke.css">
@@ -72,24 +75,42 @@
                                     <li>
                                         @Html.ActionLink("Home", "Index", "Home")
                                     </li>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li>
+                                            @Html.ActionLink("Courses", "Index", "Cours")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Student Statuses", "Index", "StudentStatus")
+                                        </li>
+                                    }
+                                    @if ((User.IsInRole("Admin")) || (User.IsInRole("Scheduling")))
+                                    {
+                                        <li>
+                                            @Html.ActionLink("Enrollment", "Index", "Enrollments")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Scheduled Classes", "Index", "ScheduledClasses")
+                                        </li>
+                                    }
+                                    @if ((User.IsInRole("Admin")) || (User.IsInRole("Scheduling")))
+                                    {
+                                        <li>
+                                            @Html.ActionLink("Students", "Index", "Students")
+                                        </li>
+                                    }
                                     <li>
-                                        @Html.ActionLink("Courses", "Index", "Cours")
+                                        @Html.ActionLink("Contact", "Contact", "Home")
                                     </li>
-                                    <li>
-                                        @Html.ActionLink("Enrollment", "Index", "Enrollments")
-                                    </li>
-                                    <li>
-                                        @Html.ActionLink("Scheduled Classes", "Index", "ScheduledClasses")
-                                    </li>
-                                    <li>
-                                        @Html.ActionLink("Students", "Index", "Students")
-                                    </li>
-                                    <li>
-                                        @Html.ActionLink("Student Statuses", "Index", "StudentStatus")
-                                    </li>
-                                    <li>
-                                        @Html.ActionLink("Contact","Contact","Home")
-                                    </li>
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li>
+                                            <ul>
+                                                <li>@Html.ActionLink("Roles", "Index", "RolesAdmin")</li>
+                                                <li>@Html.ActionLink("Users", "Index", "UsersAdmin")</li>
+                                            </ul>
+                                        </li>
+                                    }
                                     @Html.Partial("_LoginPartial")
                                 </ul>
 

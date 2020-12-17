@@ -70,6 +70,14 @@
           <Property Name="SSName" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="SSDescription" Type="nvarchar" MaxLength="250" />
         </EntityType>
+        <EntityType Name="UserDetails">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Enrollments_ScheduledClasses">
           <End Role="ScheduledClasses" Type="Self.ScheduledClasses" Multiplicity="1" />
           <End Role="Enrollments" Type="Self.Enrollments" Multiplicity="*" />
@@ -137,6 +145,7 @@
           <EntitySet Name="ScheduledClassStatuses" EntityType="Self.ScheduledClassStatuses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentStatuses" EntityType="Self.StudentStatuses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Enrollments_ScheduledClasses" Association="Self.FK_Enrollments_ScheduledClasses">
             <End Role="ScheduledClasses" EntitySet="ScheduledClasses" />
             <End Role="Enrollments" EntitySet="Enrollments" />
@@ -238,6 +247,14 @@
           <Property Name="SSDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Students" Relationship="Self.FK_Students_StudentStatuses" FromRole="StudentStatuses" ToRole="Students" />
         </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
         <Association Name="FK_ScheduledClasses_Courses">
           <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
           <End Role="ScheduledClasses" Type="Self.ScheduledClass" Multiplicity="*" />
@@ -305,6 +322,7 @@
           <EntitySet Name="ScheduledClassStatuses" EntityType="Self.ScheduledClassStatus" />
           <EntitySet Name="Students" EntityType="Self.Student" />
           <EntitySet Name="StudentStatuses" EntityType="Self.StudentStatus" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
           <AssociationSet Name="FK_ScheduledClasses_Courses" Association="Self.FK_ScheduledClasses_Courses">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="ScheduledClasses" EntitySet="ScheduledClasses" />
@@ -400,6 +418,15 @@
                 <ScalarProperty Name="SSID" ColumnName="SSID" />
                 <ScalarProperty Name="SSName" ColumnName="SSName" />
                 <ScalarProperty Name="SSDescription" ColumnName="SSDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="SATModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetails">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

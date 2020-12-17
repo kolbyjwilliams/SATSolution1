@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SAT.DATA.EF.MetaData
+namespace SAT.DATA.EF//.MetaData
 {
     #region Students
-    public class StudentsMetadata
+    public class StudentMetadata
     {
 
         //public int StudentID { get; set; }
@@ -57,8 +57,15 @@ namespace SAT.DATA.EF.MetaData
         [Required(ErrorMessage = "SSID required")]
         public int SSID { get; set; }
     }
-    [MetadataType(typeof(StudentsMetadata))]
-    public partial class Students { }
+    [MetadataType(typeof(StudentMetadata))]
+    public partial class Student
+    {
+        [Display(Name = "Student Name")]
+        public string FullName
+        {
+            get { return FirstName + " " + LastName;  }
+        }
+    }
     #endregion
 
     #region StudentStatuses
@@ -77,7 +84,7 @@ namespace SAT.DATA.EF.MetaData
         public string SSDescription { get; set; }
     }
     [MetadataType(typeof(StudentStatusesMetadata))]
-    public partial class StudentStatuses { }
+    public partial class StudentStatus { }
     #endregion
 
     #region Enrollments
@@ -98,7 +105,7 @@ namespace SAT.DATA.EF.MetaData
         public System.DateTime EnrollmentDate { get; set; }
     }
     [MetadataType(typeof(EnrollmentsMetadata))]
-    public partial class Enrollments { }
+    public partial class Enrollment { }
     #endregion
 
     #region ScheduledClasses
@@ -132,7 +139,7 @@ namespace SAT.DATA.EF.MetaData
         public int SCSID { get; set; }
     }
     [MetadataType(typeof(ScheduledClassesMetadata))]
-    public partial class ScheduledClasses { }
+    public partial class ScheduledClass { }
     #endregion
 
     #region ScheduledClassStatus
@@ -180,7 +187,7 @@ namespace SAT.DATA.EF.MetaData
 
     }
     [MetadataType(typeof(CoursesMetadata))]
-    public partial class Courses { }
+    public partial class Cours { }
     #endregion
 
 }

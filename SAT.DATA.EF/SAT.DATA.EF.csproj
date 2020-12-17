@@ -85,34 +85,35 @@
     <Compile Include="StudentStatus.cs">
       <DependentUpon>SAT.tt</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="SAT.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SAT.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+    <Compile Include="UserDetail.cs">
+      <DependentUpon>SAT.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
+    <EntityDeploy Include="SAT.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SAT.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="SAT.edmx.diagram">
       <DependentUpon>SAT.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="SAT.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SAT.Context.cs</LastGenOutput>
       <DependentUpon>SAT.edmx</DependentUpon>
+      <LastGenOutput>SAT.Context.cs</LastGenOutput>
     </Content>
     <Content Include="SAT.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SAT.edmx</DependentUpon>
       <LastGenOutput>SAT.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
