@@ -75,15 +75,21 @@
                                     <li>
                                         @Html.ActionLink("Courses", "Index", "Cours")
                                     </li>
-                                    <li><a href="service.html">Enrollment</a></li>
                                     <li>
-                                        <a href="portfolio.html">Schedulled Classes</a>
+                                        @Html.ActionLink("Enrollment", "Index", "Enrollments")
                                     </li>
-                                    <li><a href="team.html">Students</a></li>
                                     <li>
-                                        <a href="blog-left-sidebar.html">Student Statuses</a>
+                                        @Html.ActionLink("Scheduled Classes", "Index", "ScheduledClasses")
                                     </li>
-                                    <li><a href="contact.html">contact</a></li>
+                                    <li>
+                                        @Html.ActionLink("Students", "Index", "Students")
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Student Statuses", "Index", "StudentStatus")
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Contact","Contact","Home")
+                                    </li>
                                     @Html.Partial("_LoginPartial")
                                 </ul>
 
